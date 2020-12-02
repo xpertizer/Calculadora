@@ -13,7 +13,7 @@ namespace Calculadora
             string[] numeroSoma;
             string[] numeroSubtrai;
             string caracter;
-            string operadorAnterior="";
+            string operadorAnterior="+";
             int inicio = 0;
             int largura = expressao.Length;
             for (int i = 0; i < largura; i++)
@@ -27,7 +27,7 @@ namespace Calculadora
                         if (operadorAnterior.Equals("-"))
                         {
                             numeroSubtrai = expressao.Substring(inicio).Split("-");
-                            resultado = resultado + Subtrair(numeroSubtrai);
+                            resultado = resultado - Subtrair(numeroSubtrai);
                             operadorAnterior = caracter;
                             inicio = i + 1;
                         }
@@ -47,13 +47,13 @@ namespace Calculadora
                             operadorAnterior = caracter;
                         }else if (operadorAnterior.Equals("-"))
                         {
-                            numeroSubtrai = expressao.Substring(inicio, i).Split("-");
-                            resultado = resultado + Subtrair(numeroSubtrai);
+                            numeroSubtrai = expressao.Substring(inicio, i-inicio).Split("-");
+                            resultado = resultado - Subtrair(numeroSubtrai);
                             operadorAnterior = caracter;
                             inicio = i + 1;
                         }else if (operadorAnterior.Equals("+"))
                         {
-                            numeroSoma = expressao.Substring(inicio, i).Split("+");
+                            numeroSoma = expressao.Substring(inicio, i-inicio).Split("+");
                             resultado = resultado + Somar(numeroSoma);
                             operadorAnterior = caracter;
                             inicio = i + 1;
