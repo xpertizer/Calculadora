@@ -65,28 +65,7 @@ namespace Calculadora
             }
 
             return resultado;
-            //if (expressao.Contains("+"))
-            //{
-            //    numero = expressao.Split("+");
-            //    foreach (var item in numero)
-            //    {
-            //        resultado = resultado + Convert.ToInt32(item);
-            //    }
-            //    return resultado;
-
-            //}
-            //else if (expressao.Contains("-"))
-            //{
-            //    numero = expressao.Split("-");
-            //    resultado = Convert.ToInt32(numero[0]);
-            //    numero[0] = "0";
-            //    foreach (var item in numero)
-            //    {
-            //        resultado = resultado - Convert.ToInt32(item);
-            //    }
-            //    return resultado;
-            //}
-            //return 0;
+            
 
         }
 
